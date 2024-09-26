@@ -1,0 +1,17 @@
+<template>
+    <lightning-card title="Anstehende Meetings">
+        <div class="slds-p-around_medium">
+        <template lwc:if={hasMeetings}>
+            <lightning-datatable
+                key-field="id"
+                data={upcomingMeetings}
+                columns={columns}
+                hide-checkbox-column>
+            </lightning-datatable>
+        </template>
+        <template lwc:else>
+            <p>Es gibt keine anstehenden Meetings.</p>
+        </template>
+        </div>
+    </lightning-card>
+</template>
