@@ -1,0 +1,8 @@
+lightning-combobox{
+    width: fit-content;
+}
+
+.create-meeting_button{
+    display: flex;
+    justify-content: flex-end;
+}

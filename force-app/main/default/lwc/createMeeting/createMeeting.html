@@ -1,0 +1,22 @@
+<template>
+    <lightning-card title="Neues Meeting ansetzen">
+        <div class="slds-p-around_medium">
+            <lightning-input label="Meeting Name" value={meetingName} onchange={handleInputChangeName}></lightning-input>
+            <lightning-input class="slds-m-top_x-small" label="Startdatum" type="datetime-local" value={startDate} onchange={handleInputChangeStart}></lightning-input>
+            <lightning-input class="slds-m-top_x-small" label="Enddatum" type="datetime-local" value={endDate} onchange={handleInputChangeEnd}></lightning-input>
+            <lightning-combobox class="slds-m-top_x-small" label="Verantwortliche Person" value={userId} options={userOptions} onchange={handleInputChangeUser} placeholder="Verantwortliche Person wählen"></lightning-combobox>
+            <lightning-dual-listbox
+                name="contactBox"
+                label="Teilnehmer auswählen"
+                source-label="Verfügbare Kontakte"
+                selected-label="Ausgewählte Kontakte"
+                field-level-help="Wähle die Meetingteilnehmenden aus"
+                options={contactOptions}
+                value={selectedContacts}
+                onchange={handleContactSelection}
+                class="slds-m-top_x-small slds-m-bottom_large">
+            </lightning-dual-listbox>
+            <lightning-button class="create-meeting_button" label="Meeting erstellen" onclick={createMeeting} variant="brand"></lightning-button>
+        </div>
+    </lightning-card>
+</template>
